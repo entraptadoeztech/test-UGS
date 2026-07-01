@@ -1,10 +1,10 @@
 <html>
     <head>
         <base target="_blank">
-        <script id="gamemonetize-sdk">Couldn't find the requested file /sedk.js in testamalame/sef.</script></head><body><div id="container">
-  <iframe id="fr" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+        <script id="gamemonetize-sdk">Couldnt find the requested file /sedk.js in testamalame/sef.</script></head><body><div id="container">
+  <iframe id="no" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
   <button class="play-button" type="button" onclick="PlayTo(this)">PLAY REGULAR</button>
-  <button class="fullscreen-button" type="button" onclick="openFullscreen()">OPEN UNDETECTABLE</button>
+  <button class="fullscreen-button" type="button" onclick="openFull()">OPEN UNDETECTABLE(to a certain extent)</button>
 </div>
 
 <style>
@@ -17,14 +17,14 @@
 
 <script>
 
-  const DB_NAME = 'GameCacheDB';
+  const DBG_NAME = 'GameCacheDB';
   const STORE_NAME = 'GameFiles';
   const CACHE_DURATION = 90 * 24 * 60 * 60 * 1000; // 3 ay
-  const FILE_URL = 'https://cdn.jsdelivr.net/gh/entraptadoeztech/The_Unity_Proxy_Project@refs/heads/main/ugS.xml.html';
+  const DA_FILE_URL = 'https://raw.githack.com/entraptadoeztech/The_Unity_Proxy_Project/refs/heads/main/FilEs.html';
 
   function openDB() {
     return new Promise((resolve, reject) => {
-      const request = indexedDB.open(DB_NAME, 1);
+      const request = indexedDB.open(DBG_NAME, 1);
       request.onupgradeneeded = (event) => {
         const db = event.target.result;
         db.createObjectStore(STORE_NAME, { keyPath: 'url' });
@@ -73,8 +73,8 @@
 
 
   function PlayTo(button) {
-    const iframe = document.getElementById("fr");
-    getFileFromCache(FILE_URL).then((text) => {
+    const iframe = document.getElementById("no");
+    getFileFromCache(DA_FILE_URL).then((text) => {
       iframe.contentDocument.open();
       iframe.contentDocument.write(text);
       iframe.contentDocument.close();
@@ -89,8 +89,8 @@
     });
   }
 
-  function openFullscreen() {
-    getFileFromCache(FILE_URL).then((text) => {
+  function openFull() {
+    getFileFromCache(DA_FILE_URL).then((text) => {
       const newWindow = window.open("", "_blank");
       if (newWindow) {
         newWindow.document.open();
